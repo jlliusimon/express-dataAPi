@@ -2,15 +2,15 @@ var express = require('express');
 var app = express();
 var fs = require("fs");
 var bodyParser = require('body-parser');
-//解析传入的请求体req.body
+//瑙ｆ瀽浼犲叆鐨勮姹備綋req.body
 var urlencodedParser = bodyParser.urlencoded({ extended: true })
 
-//同步读取文件
+//鍚屾璇诲彇鏂囦欢
 var data = fs.readFileSync('shopListQuery.json').toString();
 
-//post方法访问数据
+//post鏂规硶璁块棶鏁版嵁
 app.post('/shopListQuery',urlencodedParser,function (req, res) {
-    console.log(req.body)
+    //console.log(req.body)
     res.end(data);
 });
 
